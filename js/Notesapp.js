@@ -4,39 +4,35 @@ showNotes();
 let addbtn = document.getElementById('addbtn');
 addbtn.addEventListener('click', function () {
     let addText = document.getElementById('addText');
+    let addTitle = document.getElementById('title');
+
     let notes = localStorage.getItem('notes');
-    let mark = localStorage.getItem('mark');
-    if (mark == null) {
-        markObj = [];
-    }
-    else {
-        markObj = JSON.parse(mark);
-    }
+    
     if (notes == null) {
-        markObj = [];
-        // noetesobj =[];
+        notesObj = [];
+        
     }
     else {
         noetesobj = JSON.parse(notes);
-        // markObj=JSON.parse(mark);
+    
     }
-    markObj.push(0);
-    noetesobj.push(addText.value);
+    let data={
+        tite:addTitle.value,
+        text:addText.value,
+        mark:0
+    }
+    // markObj.push(0);
+    noetesobj.push(data);
     localStorage.setItem('notes', JSON.stringify(noetesobj));
-    localStorage.setItem('mark', JSON.stringify(markObj));
+    // localStorage.setItem('mark', JSON.stringify(markObj));
     addText.value = "";
+    addTitle.value="";
 
     showNotes();
 })
 function showNotes() {
     let notes = (localStorage.getItem("notes"));
-    let mark = localStorage.getItem('mark');
-    if (mark == null) {
-        markObj = [];
-    }
-    else {
-        markObj = JSON.parse(mark);
-    }
+    
     if (notes == null) {
         noetesobj = [];
     }
@@ -44,15 +40,17 @@ function showNotes() {
         noetesobj = JSON.parse(notes);
     }
     let html = "";
+    // let titleHadding = "";
+    
     noetesobj.forEach(function (element, index) {
         html += `
-        <div class="card cards mx-2 my-2" style="width: 18rem;">
+        <div class="card cards mx-2 my-2" style="width: 18rem; background-color: #fcd5ce">
         <div class="card-body">
-            <h5 class="card-title">Note ${index + 1}</h5>
-            <p class="card-text">${element}</p>
+            <h5 class="card-title">${element.tite}</h5>
+            <p class="card-text">${element.text}</p>
             <button id="${index}" onclick='delNote(this.id)' class="btn btn-dark">Delete Note</button>
         </div>
-        <button id="${index}" class="btn btn-outline-warning btn-sm " onclick="markImp(this.id)" >Mark Important </button>
+        <button id="${index}" class="btn btn-outline-danger btn-sm"  onclick="markImp(this.id)" >Mark Important </button>
     </div>`
 
         // console.log(markObj)
@@ -62,8 +60,8 @@ function showNotes() {
     if (noetesobj.length != 0) {
         notesElm.innerHTML = html;
         // console.log(markObj)
-        Array.from(markObj).forEach(function (element, index) {
-            if (element == 1) {
+        Array.from(noetesobj).forEach(function (element, index) {
+            if (element.mark == 1) {
                 let cards = document.getElementsByClassName('cards');
                 //  console.
                 Array.from(cards).forEach(function (e) {
@@ -72,7 +70,7 @@ function showNotes() {
                         e.setAttribute('class', 'bg-info card cards mx-2 my-2');
                         target.innerText = "Marked";
                         // console.log(target);
-                        target.setAttribute('class', 'btn btn-warning btn-sm');
+                        target.setAttribute('class', 'btn btn-primary btn-sm');
                     };
 
                 });
@@ -90,13 +88,7 @@ function showNotes() {
 function delNote(index) {
     console.log('del note is called')
     let notes = localStorage.getItem('notes');
-    let mark = localStorage.getItem('mark');
-    if (mark == null) {
-        markObj = [];
-    }
-    else {
-        markObj = JSON.parse(mark);
-    }
+   
     if (notes == null) {
         noetesobj = [];
     }
@@ -104,9 +96,7 @@ function delNote(index) {
         noetesobj = JSON.parse(notes);
     };
     noetesobj.splice(index, 1);
-    markObj.splice(index, 1);
-    mark = JSON.stringify(markObj);
-    localStorage.setItem('mark', mark);
+    
 
     notes = JSON.stringify(noetesobj);
     localStorage.setItem('notes', notes);
@@ -133,38 +123,29 @@ searchTxt.addEventListener('input', function () {
 })
 function markImp(id) {
     // console.log('clicked',id);
-    let mark = localStorage.getItem('mark');
-    if (mark == null) {
-        markObj = [];
+    let note = localStorage.getItem('notes');
+    if (note == null) {
+        noteObj = [];
     }
     else {
-        markObj = JSON.parse(mark);
+        noteObj = JSON.parse(note);
     }
-    markObj[id] = 1;
-    localStorage.setItem('mark', JSON.stringify(markObj));
+    noteObj[id].mark = 1;
+    localStorage.setItem('notes', JSON.stringify(noteObj));
 
     let cards = document.getElementsByClassName('cards');
-    //  console.log(cards)
-    // Array.from(cards).forEach(function (element) {
-    //     if (element.getElementsByTagName('button')[1].id === id) {
-
-    //         element.setAttribute('class', 'bg-info card cards mx-2 my-2');
-    //         let target = element.getElementsByTagName('button')[1];
-    //         target.innerText = "Unmark";
-    //         console.log(target);
-    //         target.setAttribute('class', 'btn btn-warning btn-sm');
-
-    //     }
-        Array.from(markObj).forEach(function (element, index) {
-            if (element == 1) {
+  
+    console.log(noteObj)
+        Array.from(noteObj).forEach(function (element, index) {
+            if (element.mark == 1) {
                 Array.from(cards).forEach(function (e) {
                     let target = e.getElementsByTagName('button')[1];
                     if (index == target.id) {
                         e.setAttribute('class', 'bg-info card cards mx-2 my-2');
                         target.innerText = "Marked";
                         // console.log(target);
-                        target.setAttribute('class', 'btn btn-warning btn-sm');
-                        target.addEventListener('click', unmark(id));
+                        target.setAttribute('class', 'btn btn-primary btn-sm');
+                        // target.addEventListener('click', unmark(id));
                     }
 
                 });
@@ -174,28 +155,3 @@ function markImp(id) {
 };
 
 
-function unmark(id){
-    // console.log('reachd')
-    // let mark = localStorage.getItem('mark');
-    // if (mark == null) {
-    //     markObj = [];
-    // }
-    // else {
-    //     markObj = JSON.parse(mark);
-    // }
-    // markObj[id] = 0;
-    // localStorage.setItem('mark', JSON.stringify(markObj));
-    // let cards = document.getElementsByClassName('cards');
-    // Array.from(cards).forEach(function (e) {
-    //     let target = e.getElementsByTagName('button')[1];
-    //     if (id == target.id) {
-    //         e.setAttribute('class', 'bg-info card cards mx-2 my-2');
-    //         target.innerText = "Mark Important";
-    //         // console.log(target);
-    //         target.setAttribute('class', 'btn btn-outline-warning btn-sm');
-    //         target.addEventListener('click', markImp(id));
-    //     }
-
-    // });
-   
-}

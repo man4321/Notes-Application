@@ -15,8 +15,8 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<body style="background-color:#f8edeb;">
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#ffb5a7;">
         <a class="navbar-brand" href="#">Notes APP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,18 +32,23 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input id="searchtxt" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
     <div class="container my-3">
-        <h1>Welcome to my notes</h1>
-        <div class="card">
+        <h1>Save Your Notes</h1>
+       
+        <div class="card" style="background-color:#fcd5ce;">
             <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
             <div class="card-body">
                 <h5 class="card-title">Add a Note</h5>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1"></label>
+                    <div>
+                        <label>Title: </label><input class="form-control" type="text" id="title">
+                        </div>
+                        
+                    <label for="addText">Text:</label>
                     <textarea class="form-control" id="addText" rows="3"></textarea>
                 </div>
                 <button id="addbtn" class="btn btn-dark">Add Note</button>
