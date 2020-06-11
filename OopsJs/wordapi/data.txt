@@ -1,0 +1,170 @@
+{
+  "word": "pure",
+  "results": [
+    {
+      "definition": "without qualification; used informally as (often pejorative) intensifiers",
+      "partOfSpeech": "adjective",
+      "synonyms": [
+        "arrant",
+        "complete",
+        "consummate",
+        "double-dyed",
+        "everlasting",
+        "gross",
+        "perfect",
+        "sodding",
+        "staring",
+        "stark",
+        "thorough",
+        "thoroughgoing",
+        "unadulterated",
+        "utter"
+      ],
+      "similarTo": [
+        "unmitigated"
+      ],
+      "examples": [
+        "pure folly"
+      ]
+    },
+    {
+      "definition": "in a state of sexual virginity",
+      "partOfSpeech": "adjective",
+      "synonyms": [
+        "vestal",
+        "virgin",
+        "virginal",
+        "virtuous"
+      ],
+      "similarTo": [
+        "chaste"
+      ],
+      "derivation": [
+        "pureness",
+        "purity"
+      ],
+      "examples": [
+        "pure and vestal modesty",
+        "men have decreed that their women must be pure and virginal"
+      ]
+    },
+    {
+      "definition": "(of color) being chromatically pure; not diluted with white or grey or black",
+      "partOfSpeech": "adjective",
+      "synonyms": [
+        "saturated"
+      ],
+      "similarTo": [
+        "vivid",
+        "intense"
+      ],
+      "derivation": [
+        "pureness"
+      ]
+    },
+    {
+      "definition": "concerned with theory and data rather than practice; opposed to applied",
+      "partOfSpeech": "adjective",
+      "similarTo": [
+        "theoretical"
+      ],
+      "examples": [
+        "pure science"
+      ]
+    },
+    {
+      "definition": "free from discordant qualities",
+      "partOfSpeech": "adjective",
+      "similarTo": [
+        "harmonious"
+      ]
+    },
+    {
+      "definition": "free of extraneous elements of any kind",
+      "partOfSpeech": "adjective",
+      "also": [
+        "clean",
+        "processed"
+      ],
+      "attribute": [
+        "pureness",
+        "purity"
+      ],
+      "similarTo": [
+        "fresh",
+        "unpolluted",
+        "axenic",
+        "clean",
+        "clear",
+        "fine",
+        "uncontaminated",
+        "virginal",
+        "unmingled",
+        "unmixed",
+        "light",
+        "native",
+        "plain",
+        "pristine",
+        "sheer",
+        "straight up",
+        "sublimate",
+        "unadulterated",
+        "unalloyed",
+        "unclouded"
+      ],
+      "antonyms": [
+        "impure"
+      ],
+      "derivation": [
+        "purity",
+        "pureness"
+      ],
+      "examples": [
+        "pure air and water",
+        "pure gold",
+        "pure primary colors",
+        "the violin's pure and lovely song",
+        "pure tones",
+        "pure oxygen"
+      ]
+    },
+    {
+      "definition": "(used of persons or behaviors) having no faults; sinless",
+      "partOfSpeech": "adjective",
+      "also": [
+        "chaste"
+      ],
+      "attribute": [
+        "morality"
+      ],
+      "similarTo": [
+        "undefiled",
+        "immaculate",
+        "white"
+      ],
+      "antonyms": [
+        "impure"
+      ],
+      "derivation": [
+        "pureness",
+        "purity"
+      ],
+      "examples": [
+        "I felt pure and sweet as a new baby",
+        "pure as the driven snow"
+      ]
+    }
+  ],
+  "syllables": {
+    "count": 3,
+    "list": [
+      "pu",
+      "r",
+      "e"
+    ]
+  },
+  "pronunciation": {
+    "all": "pjʊr"
+  },
+  "frequency": 4.5
+}
