@@ -1,0 +1,37 @@
+body {
+    background:rgba(205, 192, 216, 0.562);
+}
+.imgBox{
+    background-image: url('smile.png');
+    /* image-orientation:from-image; */
+    background-repeat: no-repeat;
+    /* shape-image-threshold: initial; */
+    position: relative; 
+    top: 5px;
+    left: 5px;
+    height: 101px;
+    width: 101px;
+    cursor: pointer;
+}
+.whiteBox{
+    display: inline-block;
+    position: relative;
+    height: 110px;
+    width: 110px;
+    margin: 10px;
+    background-color: white;
+    border: 3px black solid;
+    border-radius: 10%;
+}
+.hold{
+    border-style:dashed;
+}
+.dashed {
+    background: rgb(238, 220, 238);
+    border-style: dashed;
+ }
+
+.hide{
+    display: none;
+};
+
