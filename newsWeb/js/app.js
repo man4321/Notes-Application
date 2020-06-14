@@ -7,7 +7,7 @@ function setCategory(id){
     source=cate.innerText;
     let xhr=new XMLHttpRequest();
     let newsHtml=``;
-    xhr.open('GET',`http://newsapi.org/v2/top-headlines?country=in&category=${source}&apiKey=${apiKey}`,true); 
+    xhr.open('GET',`https://newsapi.org/v2/top-headlines?country=in&category=${source}&apiKey=${apiKey}`,true); 
     xhr.onload=function(){
         if(this.status===200){
             let json = JSON.parse(this.response);
@@ -47,7 +47,12 @@ function setCategory(id){
 // let loc = document.getElementById('addnews');
 let newsHtml=``;
 
+<<<<<<< HEAD
 var data = null;
+=======
+const xhr = new XMLHttpRequest();
+xhr.open('GET',`https://newsapi.org/v2/top-headlines?country=in&category=${source}&apiKey=${apiKey}`,true);
+>>>>>>> ccbe234782b568a11d8395e8d2a75518ea3561bb
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
