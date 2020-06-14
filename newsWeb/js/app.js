@@ -47,9 +47,23 @@ function setCategory(id){
 // let loc = document.getElementById('addnews');
 let newsHtml=``;
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET',`http://newsapi.org/v2/top-headlines?country=in&category=${source}&apiKey=${apiKey}`,true);
+var data = null;
 
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://myallies-breaking-news-v1.p.rapidapi.com/GetTopNews");
+xhr.setRequestHeader("x-rapidapi-host", "myallies-breaking-news-v1.p.rapidapi.com");
+xhr.setRequestHeader("x-rapidapi-key", "49cd174af5msh359b8d0032bbfe5p12df1ajsncded66ffaf3e");
+
+// xhr.send(data);
+// xhr.send(data);
 xhr.onload=function(){
     if(this.status===200){
         let json = JSON.parse(this.response);
